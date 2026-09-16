@@ -22,12 +22,13 @@
     <!-- Navigation Header -->
     <header class="glass-nav">
         <div class="nav-container">
-            <img src="logo.png" alt="Studio Logo" class="nav-logo">
-            <span class="studio-name">Studio Tigz</span>
+            <a href="#top" class="brand-mark" aria-label="Studio Tigz home">ST</a>
+            <a href="#top" class="studio-name">Studio Tigz</a>
         </div>
     </header>
 
     <!-- Main Hero Statement Section -->
+    <main id="top">
     <section class="hero-section">
         <div class="hero-glow"></div>
         <div class="container">
@@ -100,15 +101,19 @@
                     <p>📱 <a href="tel:7192891085">719-289-1085</a></p>
                 </div>
 
-                <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <textarea placeholder="Tell me about your project scope..." rows="5" required></textarea>
+                <form class="contact-form" action="mailto:tigzizamazin@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Your name</label>
+                    <input id="name" name="name" type="text" placeholder="Your Name" required>
+                    <label for="email">Your email</label>
+                    <input id="email" name="email" type="email" placeholder="Your Email Address" required>
+                    <label for="message">Project details</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project scope..." rows="5" required></textarea>
                     <button type="submit" class="btn-submit">Send Signal</button>
                 </form>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -117,11 +122,14 @@
     <!-- Futuristic Hover Audio System -->
     <script>
         // Create an electronic high-end synth blip on the fly
+        let audioContext;
+
         function playHoverSound() {
             const AudioContext = window.AudioContext || window.webkitAudioContext;
             if (!AudioContext) return;
             
-            const ctx = new AudioContext();
+            audioContext ??= new AudioContext();
+            const ctx = audioContext;
             const osc = ctx.createOscillator();
             const gain = ctx.createGain();
             
