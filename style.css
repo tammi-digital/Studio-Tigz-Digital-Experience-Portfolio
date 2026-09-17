@@ -294,14 +294,53 @@ body {
 .work-card {
     background: var(--card-bg);
     border: 1px solid var(--glass-border);
-    padding: 40px;
     border-radius: 16px;
-    transition: border 0.3s, transform 0.3s;
+    overflow: hidden; /* Clips the background graphic to the card's rounded corners */
+    display: flex;
+    flex-direction: column;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.work-card:hover {
-    border-color: rgba(168, 85, 247, 0.4);
-    transform: scale(1.02);
+.card-visual-header {
+    height: 160px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.asset-ecommerce {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.05));
+}
+
+.asset-motion {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.05));
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+}
+
+.preview-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--neon-purple);
+}
+
+.card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .work-card h3 {
@@ -312,6 +351,43 @@ body {
 .work-card p {
     color: var(--text-muted);
     line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.project-tags span {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.project-link {
+    margin-top: auto;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+.work-card:hover {
+    border-color: var(--neon-purple);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+.work-card:hover .project-link {
+    color: var(--neon-blue);
 }
 
 /* Glassmorphic Contact Card */
