@@ -1,0 +1,38 @@
+:root { --black: #111315; --steel: #252b2f; --orange: #ff652f; --yellow: #ffc247; --white: #f2f1e9; --line: rgba(242,241,233,.2); }
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'Space Mono', monospace; margin: 0; overflow-x: hidden; }
+a { color: inherit; }
+.concept-shell { background: repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.018) 23px 24px); min-height: 100vh; }
+.concept-nav { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 22px 6vw; }
+.concept-logo { color: var(--orange); font: 800 1.05rem/1 'Barlow Condensed', sans-serif; letter-spacing: .17em; text-decoration: none; }
+.concept-nav-links { align-items: center; display: flex; gap: 24px; font-size: .7rem; }
+.concept-nav-links a { text-decoration: none; text-transform: uppercase; }
+.concept-nav-links a:hover { color: var(--orange); }
+.sound-toggle { background: var(--orange); border: 0; color: var(--black); cursor: pointer; font: 700 .65rem 'Space Mono', monospace; padding: 10px 12px; text-transform: uppercase; }
+.sound-toggle.is-on { background: var(--yellow); }
+.concept-main { margin: auto; max-width: 1300px; padding: 0 6vw; }
+.concept-hero { align-items: center; display: grid; gap: 7vw; grid-template-columns: 1.1fr .9fr; min-height: 78vh; padding: 75px 0 95px; }
+.concept-kicker { color: var(--yellow); font: 700 .72rem 'Space Mono', monospace; letter-spacing: .15em; text-transform: uppercase; }
+.concept-hero h1, .concept-section h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; letter-spacing: -.035em; text-transform: uppercase; }
+.concept-hero h1 { color: var(--white); font-size: clamp(4rem, 10vw, 9rem); line-height: .78; margin: 20px 0 30px; max-width: 800px; }
+.concept-hero p { color: #c2c5bd; font-size: .95rem; line-height: 1.8; max-width: 550px; }
+.concept-cta { background: var(--orange); color: var(--black); display: inline-block; font: 700 .8rem 'Space Mono', monospace; margin-top: 19px; padding: 17px 20px; text-decoration: none; text-transform: uppercase; transition: box-shadow .2s, transform .2s; }
+.concept-cta:hover { box-shadow: 7px 7px 0 var(--yellow); transform: translate(-3px, -3px); }
+.concept-art { aspect-ratio: 4 / 5; background: linear-gradient(145deg, rgba(255,101,47,.34), rgba(17,19,21,.15)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=88') center/cover; border: 2px solid var(--orange); box-shadow: 15px 15px 0 var(--orange); position: relative; }
+.concept-art::before { border: 2px solid var(--yellow); content: ''; inset: 9%; position: absolute; transform: rotate(4deg); }
+.art-label { bottom: 23px; color: var(--white); font: 700 .65rem 'Space Mono', monospace; left: 23px; letter-spacing: .1em; position: absolute; text-transform: uppercase; z-index: 1; }
+.concept-band { border-block: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); padding: 30px 0; }
+.concept-band strong { color: var(--orange); display: block; font: 700 1.3rem 'Barlow Condensed', sans-serif; letter-spacing: .05em; margin-bottom: 7px; text-transform: uppercase; }
+.concept-band span, .concept-card p { color: #c2c5bd; font-size: .78rem; line-height: 1.7; }
+.concept-section { padding: 105px 0; }
+.concept-section h2 { color: var(--white); font-size: clamp(3rem, 6vw, 6.4rem); line-height: .82; margin: 18px 0 40px; max-width: 760px; }
+.concept-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.concept-card { background: var(--steel); border: 1px solid var(--line); border-left: 5px solid var(--orange); padding: 28px; transition: transform .22s, border-color .22s; }
+.concept-card:hover { border-color: var(--yellow); transform: skewY(-2deg) translateY(-6px); }
+.concept-number { color: var(--yellow); font-size: .65rem; font-weight: 700; letter-spacing: .1em; }
+.concept-card h3 { font: 700 1.5rem 'Barlow Condensed', sans-serif; letter-spacing: .03em; text-transform: uppercase; }
+.concept-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 28px 0 50px; font-size: .67rem; }
+@media (max-width: 760px) { .concept-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .concept-nav-links { flex-wrap: wrap; gap: 12px 16px; } .concept-hero { grid-template-columns: 1fr; padding-top: 45px; } .concept-hero h1 { font-size: clamp(4rem, 20vw, 7rem); } .concept-art { max-width: 430px; } .concept-band, .concept-grid { grid-template-columns: 1fr; } .concept-footer { flex-direction: column; gap: 18px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }

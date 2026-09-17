@@ -1,0 +1,39 @@
+:root { --forest: #17372f; --sage: #dce8d8; --mint: #a9c8a6; --cream: #f8f5ed; --ink: #183129; --line: rgba(24,49,41,.18); }
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; margin: 0; overflow-x: hidden; }
+a { color: inherit; }
+.concept-shell { min-height: 100vh; }
+.concept-nav { align-items: center; display: flex; justify-content: space-between; padding: 25px 6vw; position: relative; z-index: 2; }
+.concept-logo { font: 700 .8rem/1 'DM Sans', sans-serif; letter-spacing: .28em; text-decoration: none; }
+.concept-nav-links { align-items: center; display: flex; gap: 25px; font-size: .78rem; }
+.concept-nav-links a { text-decoration: none; }
+.concept-nav-links a:hover { color: #7a9e76; }
+.sound-toggle { background: transparent; border: 1px solid var(--line); border-radius: 99px; color: var(--ink); cursor: pointer; padding: 9px 13px; }
+.sound-toggle.is-on { background: var(--forest); color: var(--cream); }
+.concept-main { margin: auto; max-width: 1220px; padding: 0 6vw; }
+.concept-hero { align-items: center; display: grid; gap: 8vw; grid-template-columns: 1fr 1fr; min-height: 76vh; padding: 55px 0 85px; }
+.concept-kicker { color: #6b926c; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.concept-hero h1, .concept-section h2 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; letter-spacing: -.045em; }
+.concept-hero h1 { font-size: clamp(3.4rem, 7vw, 7.4rem); line-height: .92; margin: 20px 0 25px; max-width: 670px; }
+.concept-hero h1 em { color: #6b926c; }
+.concept-hero p { color: #587066; font-size: 1.05rem; line-height: 1.8; max-width: 540px; }
+.concept-cta { background: var(--forest); border-radius: 99px; color: var(--cream); display: inline-block; margin-top: 17px; padding: 16px 22px; text-decoration: none; transition: transform .3s, background .3s; }
+.concept-cta:hover { background: #6b926c; transform: translateY(-4px); }
+.concept-art { aspect-ratio: 1 / 1.12; background: linear-gradient(145deg, rgba(23,55,47,.1), rgba(169,200,166,.1)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=88') center/cover; border-radius: 48% 48% 10px 10px; box-shadow: 24px 24px 0 var(--mint); overflow: hidden; position: relative; }
+.concept-art::after { background: rgba(248,245,237,.15); content: ''; inset: 13%; position: absolute; border: 1px solid rgba(255,255,255,.7); border-radius: 45%; }
+.art-label { bottom: 24px; color: white; font-size: .7rem; left: 24px; letter-spacing: .14em; position: absolute; text-transform: uppercase; z-index: 1; }
+.concept-band { border-block: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); padding: 32px 0; }
+.concept-band strong { display: block; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; font-weight: 500; margin-bottom: 7px; }
+.concept-band span, .concept-card p { color: #587066; font-size: .9rem; line-height: 1.6; }
+.concept-section { padding: 100px 0; }
+.concept-section h2 { font-size: clamp(2.6rem, 5vw, 5.2rem); line-height: .95; margin: 18px 0 38px; max-width: 710px; }
+.concept-grid { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); }
+.concept-card { background: var(--sage); border-radius: 18px; padding: 28px; transition: transform .3s; }
+.concept-card:hover { transform: translateY(-7px) rotate(1deg); }
+.concept-number { color: #6b926c; font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
+.concept-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 500; }
+.concept-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 28px 0 50px; font-size: .78rem; }
+@media (max-width: 760px) { .concept-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .concept-nav-links { flex-wrap: wrap; gap: 12px 18px; } .concept-hero { grid-template-columns: 1fr; padding-top: 35px; } .concept-art { max-width: 430px; } .concept-band, .concept-grid { grid-template-columns: 1fr; } .concept-footer { flex-direction: column; gap: 18px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }

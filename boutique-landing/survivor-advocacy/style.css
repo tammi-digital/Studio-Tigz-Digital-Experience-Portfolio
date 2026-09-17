@@ -1,0 +1,38 @@
+:root { --wine: #55263b; --rose: #d58a86; --peach: #f2d6c7; --cream: #fff9f4; --ink: #2c1e27; --line: rgba(85,38,59,.2); }
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@400;600;700&display=swap');
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: 'Manrope', sans-serif; margin: 0; overflow-x: hidden; }
+a { color: inherit; }
+.concept-shell { min-height: 100vh; }
+.concept-nav { align-items: center; background: rgba(255,249,244,.86); border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 24px 6vw; position: sticky; top: 0; z-index: 3; }
+.concept-logo { color: var(--wine); font: 700 .9rem/1 'Libre Baskerville', serif; letter-spacing: .16em; text-decoration: none; }
+.concept-nav-links { align-items: center; display: flex; gap: 24px; font-size: .76rem; }
+.concept-nav-links a { text-decoration: none; }
+.concept-nav-links a:hover { color: var(--rose); }
+.sound-toggle { background: transparent; border: 1px solid var(--wine); border-radius: 99px; color: var(--wine); cursor: pointer; padding: 9px 13px; }
+.sound-toggle.is-on { background: var(--wine); color: var(--cream); }
+.concept-main { margin: auto; max-width: 1240px; padding: 0 6vw; }
+.concept-hero { align-items: center; display: grid; gap: 7vw; grid-template-columns: 1.05fr .95fr; min-height: 78vh; padding: 75px 0 95px; }
+.concept-kicker { color: var(--wine); font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.concept-hero h1, .concept-section h2 { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; letter-spacing: -.05em; }
+.concept-hero h1 { font-size: clamp(3rem, 6.7vw, 6.5rem); line-height: .99; margin: 19px 0 27px; max-width: 720px; }
+.concept-hero p { color: #664e5b; font-size: 1rem; line-height: 1.85; max-width: 560px; }
+.concept-cta { background: var(--wine); border-radius: 4px; color: var(--cream); display: inline-block; margin-top: 18px; padding: 16px 21px; text-decoration: none; transition: background .25s, transform .25s; }
+.concept-cta:hover { background: var(--rose); transform: translateY(-4px); }
+.concept-art { aspect-ratio: 4 / 5; background: linear-gradient(145deg, rgba(85,38,59,.22), rgba(213,138,134,.18)), url('https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=88') center/cover; border-radius: 48% 48% 4px 4px; box-shadow: 18px 18px 0 var(--peach); position: relative; }
+.concept-art::after { border: 1px solid rgba(255,249,244,.9); border-radius: 48%; content: ''; inset: 12%; position: absolute; }
+.art-label { bottom: 24px; color: white; font-size: .66rem; left: 24px; letter-spacing: .12em; position: absolute; text-transform: uppercase; z-index: 1; }
+.concept-band { border-block: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); padding: 32px 0; }
+.concept-band strong { color: var(--wine); display: block; font: 700 1.2rem 'Libre Baskerville', serif; margin-bottom: 8px; }
+.concept-band span, .concept-card p { color: #664e5b; font-size: .9rem; line-height: 1.7; }
+.concept-section { padding: 105px 0; }
+.concept-section h2 { color: var(--wine); font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.02; margin: 18px 0 38px; max-width: 760px; }
+.concept-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+.concept-card { background: rgba(242,214,199,.52); border: 1px solid var(--line); border-radius: 4px 26px 4px 26px; padding: 28px; transition: box-shadow .3s, transform .3s; }
+.concept-card:hover { box-shadow: 8px 8px 0 var(--peach); transform: translateY(-6px); }
+.concept-number { color: var(--rose); font-size: .68rem; font-weight: 700; letter-spacing: .12em; }
+.concept-card h3 { color: var(--wine); font: 700 1.3rem 'Libre Baskerville', serif; }
+.concept-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 28px 0 50px; font-size: .76rem; }
+@media (max-width: 760px) { .concept-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .concept-nav-links { flex-wrap: wrap; gap: 12px 17px; } .concept-hero { grid-template-columns: 1fr; padding-top: 45px; } .concept-art { max-width: 430px; } .concept-band, .concept-grid { grid-template-columns: 1fr; } .concept-footer { flex-direction: column; gap: 18px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }
