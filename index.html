@@ -120,15 +120,15 @@
 
                 <!-- Interactive Concept Vault Card -->
                 <div class="work-card vault-card">
+                    <input type="checkbox" id="vault-toggle" class="vault-checkbox">
                     <div class="card-visual-header asset-vault">
                         <span class="preview-badge">Interactive Vault</span>
-                        <label class="folder-trigger" for="vault-toggle" aria-label="Toggle Project Folder">
-                            <input type="checkbox" id="vault-toggle" class="vault-checkbox">
+                        <label class="folder-trigger" for="vault-toggle" aria-label="Select project folder to open examples">
                             <div class="folder-icon">
                                 <span class="folder-back">📁</span>
                                 <span class="folder-front">📂</span>
                             </div>
-                            <span class="folder-hint-text">Click Folder to Open</span>
+                            <span class="folder-hint-text">Select Folder to Open</span>
                         </label>
                     </div>
 
@@ -137,7 +137,7 @@
                         <p>Clickable concept examples across retail, advocacy, automotive, wellness, and finance.</p>
 
                         <div class="vault-file-tree">
-                            <div class="tree-header">📂 root / production_builds</div>
+                            <div class="tree-header">📂 root / concept_examples</div>
                             <ul class="file-list">
                                 <li class="file-item">
                                     <span class="file-icon">📄</span>
@@ -270,6 +270,18 @@
         // Attach the sound trigger to your interactive glowing action buttons
         document.querySelectorAll('.btn-primary, .btn-submit, .work-card').forEach(element => {
             element.addEventListener('mouseenter', playHoverSound);
+        });
+
+        const vaultToggle = document.querySelector('#vault-toggle');
+        const vaultTree = document.querySelector('.vault-file-tree');
+        vaultToggle?.addEventListener('change', () => {
+            vaultTree?.classList.toggle('is-open', vaultToggle.checked);
+            if (vaultTree) {
+                vaultTree.style.maxHeight = vaultToggle.checked ? 'none' : '0px';
+                vaultTree.style.opacity = vaultToggle.checked ? '1' : '0';
+                vaultTree.style.marginTop = vaultToggle.checked ? '20px' : '0';
+                vaultTree.style.padding = vaultToggle.checked ? '15px' : '0';
+            }
         });
     </script>
 
