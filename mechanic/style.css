@@ -36,3 +36,36 @@ a { color: inherit; }
 .concept-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 28px 0 50px; font-size: .67rem; }
 @media (max-width: 760px) { .concept-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .concept-nav-links { flex-wrap: wrap; gap: 12px 16px; } .concept-hero { grid-template-columns: 1fr; padding-top: 45px; } .concept-hero h1 { font-size: clamp(4rem, 20vw, 7rem); } .concept-art { max-width: 430px; } .concept-band, .concept-grid { grid-template-columns: 1fr; } .concept-footer { flex-direction: column; gap: 18px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }
+
+.garage-top { align-items: center; border-bottom: 1px solid var(--line); display: flex; gap: 30px; justify-content: space-between; padding: 20px 6vw; }
+.garage-top nav { align-items: center; display: flex; gap: 20px; }
+.garage-top nav a { font-size: .7rem; text-decoration: none; text-transform: uppercase; }
+.garage-status { color: #c2c5bd; font-size: .65rem; }
+.garage-status i { background: #68c56e; border-radius: 50%; display: inline-block; height: 7px; margin-right: 6px; width: 7px; }
+.garage-main { margin: auto; max-width: 1300px; padding: 0 6vw; }
+.garage-hero { align-items: stretch; display: grid; grid-template-columns: 1.1fr .9fr; min-height: 78vh; padding: 50px 0 90px; }
+.garage-hero-image { background: linear-gradient(145deg, rgba(255,101,47,.2), rgba(17,19,21,.2)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=88') center/cover; min-height: 560px; position: relative; }
+.garage-hero-image span { bottom: 25px; color: var(--white); font-size: .65rem; left: 25px; letter-spacing: .12em; position: absolute; text-transform: uppercase; }
+.garage-hero-copy { align-self: center; background: var(--steel); padding: 60px 7vw 60px 55px; }
+.garage-hero-copy h1 { color: var(--orange); font: 800 clamp(4rem, 8vw, 8rem)/.8 'Barlow Condensed', sans-serif; letter-spacing: -.04em; margin: 20px 0 28px; text-transform: uppercase; }
+.garage-hero-copy p { color: #c2c5bd; font-size: .85rem; line-height: 1.8; }
+.garage-specs { border-top: 1px solid var(--line); display: flex; gap: 25px; margin-top: 38px; padding-top: 18px; }
+.garage-specs span { color: #c2c5bd; font-size: .6rem; }
+.garage-specs b { color: var(--yellow); display: block; font-size: 1.5rem; }
+.garage-services { display: grid; gap: 8vw; grid-template-columns: .7fr 1.3fr; padding: 90px 0; }
+.service-heading h2 { color: var(--white); font: 800 clamp(3rem, 6vw, 6rem)/.8 'Barlow Condensed', sans-serif; margin: 18px 0; text-transform: uppercase; }
+.service-list a { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 20px; grid-template-columns: 40px 1fr 30px; padding: 22px 0; text-decoration: none; transition: padding .22s, color .22s; }
+.service-list a:first-child { border-top: 1px solid var(--line); }
+.service-list a:hover { color: var(--orange); padding-left: 12px; }
+.service-list b, .service-list i { color: var(--yellow); font-size: .7rem; font-style: normal; }
+.service-list strong { display: block; font: 700 1.5rem 'Barlow Condensed', sans-serif; text-transform: uppercase; }
+.service-list small { color: #c2c5bd; display: block; font-size: .68rem; line-height: 1.5; margin-top: 4px; }
+.garage-callout { border-block: 1px solid var(--line); padding: 80px 0; text-align: center; }
+.garage-callout span { color: var(--yellow); font-size: .65rem; letter-spacing: .16em; }
+.garage-callout strong { color: var(--orange); display: block; font: 800 clamp(2.5rem, 6vw, 6rem)/.85 'Barlow Condensed', sans-serif; margin-top: 20px; text-transform: uppercase; }
+@media (max-width: 760px) { .garage-top { align-items: flex-start; flex-wrap: wrap; } .garage-top nav { width: 100%; } .garage-hero, .garage-services { grid-template-columns: 1fr; } .garage-hero-image { min-height: 340px; } .garage-hero-copy { padding: 45px 28px; } }
+body::after { background: linear-gradient(90deg, transparent, rgba(255,101,47,.18), transparent); content: ''; height: 2px; left: 0; pointer-events: none; position: fixed; right: 0; top: 22%; z-index: 2; animation: scan-line 7s linear infinite; }
+.garage-hero-copy, .service-list a { animation: garage-enter .65s ease-out both; }
+.service-list a:nth-child(2) { animation-delay: .12s; } .service-list a:nth-child(3) { animation-delay: .24s; }
+@keyframes scan-line { 0% { opacity: 0; transform: translateY(-20vh); } 18%, 78% { opacity: 1; } 100% { opacity: 0; transform: translateY(80vh); } }
+@keyframes garage-enter { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: translateX(0); } }

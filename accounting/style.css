@@ -36,3 +36,38 @@ a { color: inherit; }
 .concept-footer { border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: 28px 0 50px; font-size: .68rem; }
 @media (max-width: 760px) { .concept-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .concept-nav-links { flex-wrap: wrap; gap: 12px 16px; } .concept-hero { grid-template-columns: 1fr; padding-top: 45px; } .concept-art { max-width: 420px; } .concept-band, .concept-grid { grid-template-columns: 1fr; } .concept-footer { flex-direction: column; gap: 18px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; } }
+
+.ledger-nav { align-items: center; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; padding: 22px 6vw; }
+.ledger-nav nav { align-items: center; display: flex; gap: 22px; font-size: .7rem; }
+.ledger-nav nav a { text-decoration: none; }
+.ledger-main { margin: auto; max-width: 1260px; padding: 0 6vw; }
+.ledger-welcome { align-items: end; display: flex; justify-content: space-between; padding: 85px 0 55px; }
+.ledger-welcome h1 { font: 500 clamp(3rem, 6vw, 6.8rem)/.9 'Fraunces', Georgia, serif; letter-spacing: -.07em; margin: 18px 0; max-width: 800px; }
+.ledger-welcome p { font-size: .85rem; }
+.ledger-dashboard { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); padding-bottom: 100px; }
+.metric-card { background: var(--blue); border: 1px solid var(--line); min-height: 150px; padding: 22px; }
+.metric-card.dark { background: var(--navy); color: var(--paper); }
+.metric-card span { display: block; font-size: .68rem; }
+.metric-card strong { display: block; font: 500 2.1rem 'Fraunces', Georgia, serif; margin: 22px 0 10px; }
+.metric-card strong small { font: .75rem 'DM Mono', monospace; }
+.metric-card i { color: var(--gold); font-size: .68rem; font-style: normal; }
+.ledger-chart { background: white; border: 1px solid var(--line); grid-column: 1 / -1; padding: 25px; }
+.chart-label { display: flex; justify-content: space-between; font-size: .68rem; }
+.chart-label b { color: var(--gold); font-weight: 400; }
+.bars { align-items: end; display: flex; gap: 14px; height: 160px; margin-top: 20px; }
+.bars i { background: var(--gold); display: block; flex: 1; min-height: 10px; }
+.bars i:nth-child(even) { background: var(--navy); }
+.ledger-services { border-top: 1px solid var(--line); display: grid; gap: 8vw; grid-template-columns: .8fr 1.2fr; padding: 100px 0; }
+.ledger-services h2 { font: 500 clamp(2.6rem, 5vw, 5.5rem)/.9 'Fraunces', Georgia, serif; letter-spacing: -.07em; margin: 18px 0; }
+.ledger-table { border-top: 1px solid var(--line); }
+.ledger-table a { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 18px; grid-template-columns: 40px 1fr 30px; padding: 23px 0; text-decoration: none; }
+.ledger-table a:hover { color: var(--gold); }
+.ledger-table span { color: var(--gold); font-size: .7rem; }
+.ledger-table strong { display: block; font: 500 1.25rem 'Fraunces', Georgia, serif; }
+.ledger-table small { display: block; font-size: .65rem; margin-top: 5px; }
+.ledger-table b { font-weight: 400; }
+@media (max-width: 760px) { .ledger-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .ledger-nav nav { flex-wrap: wrap; } .ledger-welcome { align-items: flex-start; flex-direction: column; gap: 20px; } .ledger-dashboard { grid-template-columns: 1fr; } .ledger-chart { grid-column: auto; } .ledger-services { grid-template-columns: 1fr; } }
+body::after { border: 1px solid rgba(196,137,61,.25); content: ''; height: 28vw; pointer-events: none; position: fixed; right: -12vw; top: 6%; transform: rotate(45deg); width: 28vw; z-index: 0; }
+.metric-card, .ledger-welcome, .ledger-table a { animation: ledger-in .7s ease-out both; }
+.metric-card:nth-child(2) { animation-delay: .1s; } .metric-card:nth-child(3) { animation-delay: .2s; } .ledger-chart { animation: ledger-in .7s .3s ease-out both; }
+@keyframes ledger-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
