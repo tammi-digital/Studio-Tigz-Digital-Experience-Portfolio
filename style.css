@@ -22,6 +22,7 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     overflow-x: hidden;
+    width: 100%;
 }
 
 .floating-assets-layer {
@@ -159,6 +160,7 @@ body {
     padding: 200px 0 120px 0;
     display: flex;
     align-items: center;
+    overflow: hidden; /* FIX: Keeps moving animation elements clipped within section boundaries */
 }
 
 .hero-glow {
@@ -174,7 +176,7 @@ body {
 }
 
 .hero-section::after {
-    position: absolute;
+    position: absolute; /* FIX: Forcibly binds the sweep light relative to the hero wrapper */
     top: 0;
     left: -35%;
     width: 22%;
@@ -223,13 +225,11 @@ body {
     line-height: 1.6;
 }
 
-
 /* Structural Concepts Grid */
 .work-section {
     padding: 100px 0;
     border-top: 1px solid var(--glass-border);
 }
-
 
 /* Upgraded Dynamic Interactive Primary Button */
 .btn-primary {
@@ -278,7 +278,6 @@ body {
     box-shadow: 0 0 15px rgba(59, 130, 246, 0.5),
                 0 0 25px rgba(168, 85, 247, 0.4);
 }
-
 
 .section-title {
     font-size: 2rem;
@@ -319,6 +318,7 @@ body {
 .contact-section {
     padding: 100px 0;
     background: radial-gradient(circle at bottom right, rgba(236,72,153,0.05), transparent 40%);
+    overflow: hidden; /* FIX: Prevents contact animation leaks from shifting viewport container dimensions */
 }
 
 .glass-card {
@@ -356,218 +356,23 @@ body {
     margin-bottom: -12px;
 }
 
+/* Completed & Sealed input block syntax structure */
 .contact-form input, .contact-form textarea {
     width: 100%;
     background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
-    padding: 16px;
+    padding: 14px;
     border-radius: 10px;
-    color: #fff;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: var(--neon-blue);
-}
-
-
-/* Upgraded Dynamic Interactive Primary Button */
-.btn-primary {
-    display: inline-block;
-    padding: 14px 32px;
-    background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    z-index: 2;
-}
-
-/* Irresistible Multi-Layer Neon Glow Effect */
-.btn-primary:hover {
-    transform: translateY(-3px) scale(1.03);
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 
-                0 0 30px var(--neon-purple), 
-                0 0 45px var(--neon-pink);
-}
-
-/* Upgraded Contact Form Submit Button */
-.btn-submit {
-    padding: 16px;
-    background: #fff;
-    color: var(--bg-dark);
-    border: 1px solid transparent;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Stark White Neon Glow for the Submit Button */
-.btn-submit:hover {
-    background: var(--bg-dark);
-    color: #fff;
-    border-color: var(--neon-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5),
-                0 0 25px rgba(168, 85, 247, 0.4);
-}
-
-
-footer {
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.3);
-    border-top: 1px solid var(--glass-border);
-}
-.direct-contact {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-}
-
-.direct-contact a {
-    color: var(--neon-blue);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.direct-contact a:hover {
-    color: var(--neon-pink);
-}
-/* Bio Section Layout */
-.bio-section {
-    padding: 100px 0;
-    border-top: 1px solid var(--glass-border);
-    background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(168, 85, 247, 0.02) 100%);
-}
-
-.bio-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: center;
-}
-
-@media (max-width: 768px) {
-    .bio-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-.bio-tag {
-    color: var(--neon-blue);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.85rem;
-    margin-bottom: 15px;
-}
-
-.bio-text h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 25px;
-    letter-spacing: -0.5px;
-}
-
-.bio-paragraph {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-}
-
-.bio-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.stat-card {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    padding: 25px;
-    border-radius: 14px;
-    transition: transform 0.2s;
-}
-
-.stat-card:hover {
-    transform: translateX(5px);
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-.stat-card h3 {
-    font-size: 1.1rem;
     color: var(--text-main);
-    margin-bottom: 8px;
-}
-
-.stat-card p {
-    color: var(--text-muted);
+    font-family: sans-serif;
     font-size: 0.95rem;
-    line-height: 1.5;
+    transition: all 0.25s ease;
 }
 
-@media (max-width: 600px) {
-    .hero-section {
-        padding: 150px 0 90px;
-    }
-
-    .hero-title {
-        font-size: 2.65rem;
-    }
-
-    .glass-card {
-        padding: 30px 20px;
-    }
-
-    .direct-contact {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .float-item {
-        font-size: 1.25rem;
-        opacity: 0.55;
-    }
-
-    .sparkle-particle {
-        font-size: 0.9rem;
-    }
-
-    .item-2,
-    .item-5,
-    .item-7 {
-        display: none;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    .float-item {
-        animation: none;
-    }
-
-    .sparkle-particle,
-    .hero-section::after {
-        animation: none;
-        opacity: 0;
-    }
+/* Smooth neon focus state indicator lines */
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: var(--neon-purple);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.25);
+    background: rgba(0, 0, 0, 0.4);
 }
