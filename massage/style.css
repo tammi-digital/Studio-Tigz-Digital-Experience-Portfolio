@@ -67,3 +67,10 @@ a { color: inherit; }
 .ritual-item p { color: #587066; font-size: .85rem; margin: 6px 0 0; }
 .ritual-item > strong { text-align: right; }
 @media (max-width: 760px) { .tide-nav { align-items: flex-start; flex-direction: column; gap: 18px; } .tide-nav nav { flex-wrap: wrap; } .tide-hero { grid-template-columns: 1fr; } .tide-hero-art { max-width: 390px; } .tide-booking { align-items: flex-start; flex-direction: column; padding: 28px; } .booking-options { align-items: flex-start; flex-wrap: wrap; } .ritual-item { grid-template-columns: 35px 1fr; } .ritual-item > strong { grid-column: 2; text-align: left; } }
+.tide-gallery { display: grid; gap: 16px; grid-template-columns: .8fr 1.3fr .8fr; padding: 65px 0 100px; }
+.tide-photo { align-items: end; background-position: center; background-size: cover; display: flex; min-height: 340px; padding: 18px; }
+.tide-photo span { background: rgba(33,24,23,.78); color: var(--forest); font-family: 'Playfair Display', Georgia, serif; font-size: .95rem; padding: 9px 12px; }
+.tide-photo-one { background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=88'); }
+.tide-photo-two { background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=88'); min-height: 440px; }
+.tide-photo-three { background-image: url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=800&q=88'); }
+@media (max-width: 760px) { .tide-gallery { grid-template-columns: 1fr; } .tide-photo, .tide-photo-two { min-height: 300px; } }

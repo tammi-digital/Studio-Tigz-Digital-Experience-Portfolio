@@ -69,3 +69,10 @@ body::after { background: linear-gradient(90deg, transparent, rgba(255,101,47,.1
 .service-list a:nth-child(2) { animation-delay: .12s; } .service-list a:nth-child(3) { animation-delay: .24s; }
 @keyframes scan-line { 0% { opacity: 0; transform: translateY(-20vh); } 18%, 78% { opacity: 1; } 100% { opacity: 0; transform: translateY(80vh); } }
 @keyframes garage-enter { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: translateX(0); } }
+.garage-gallery { display: grid; gap: 14px; grid-template-columns: 1.4fr .8fr .8fr; padding: 90px 0 110px; }
+.garage-photo { background-position: center; background-size: cover; min-height: 280px; position: relative; }
+.garage-photo span { background: var(--black); bottom: 0; color: var(--yellow); font-size: .62rem; left: 0; padding: 10px 12px; position: absolute; }
+.garage-photo-one { background-image: url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1000&q=88'); }
+.garage-photo-two { background-image: url('https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=800&q=88'); }
+.garage-photo-three { background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=800&q=88'); }
+@media (max-width: 760px) { .garage-gallery { grid-template-columns: 1fr; } }
