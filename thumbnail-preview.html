@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Tigz Portfolio Thumbnail</title>
+    <style>
+      :root {
+        --bg: #0d0f15;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle at top, #181d2f 0%, var(--bg) 45%, #090b12 100%);
+        font-family: Arial, sans-serif;
+      }
+      .frame {
+        width: min(92vw, 1200px);
+        padding: 18px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 22px;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.45);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="frame">
+      <img src="./portfolio-thumbnail.svg" alt="Studio Tigz portfolio thumbnail" />
+    </div>
+  </body>
+</html>
