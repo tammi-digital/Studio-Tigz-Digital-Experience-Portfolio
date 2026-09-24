@@ -396,9 +396,10 @@ body {
     height: 180px !important;
 }
 
-.vault-checkbox {
-    display: none;
-}
+.vault-details { display: contents; }
+
+.vault-details > summary { list-style: none; }
+.vault-details > summary::-webkit-details-marker { display: none; }
 
 .folder-trigger {
     display: flex;
@@ -407,6 +408,7 @@ body {
     cursor: pointer;
     gap: 8px;
     margin-top: 15px;
+    pointer-events: none;
 }
 
 .folder-icon {
@@ -420,10 +422,6 @@ body {
 .folder-icon .folder-front { display: none; }
 .folder-icon .folder-back { display: block; }
 
-.vault-checkbox:checked + .folder-icon .folder-front { display: block; }
-.vault-checkbox:checked + .folder-icon .folder-back { display: none; }
-.vault-checkbox:checked + .folder-icon { transform: scale(1.08); }
-
 .folder-hint-text {
     font-size: 0.75rem;
     font-family: sans-serif;
@@ -433,7 +431,6 @@ body {
 }
 
 .vault-file-tree {
-    display: none;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -445,27 +442,22 @@ body {
     text-align: left;
 }
 
-.vault-file-tree.is-open {
+.vault-details[open] .folder-icon .folder-front { display: block; }
+.vault-details[open] .folder-icon .folder-back { display: none; }
+.vault-details[open] .folder-icon { transform: scale(1.08); }
+
+.vault-details[open] .vault-file-tree {
     display: block;
-    max-height: none;
-    opacity: 1;
-    margin-top: 20px;
-    overflow-y: auto;
-    padding: 15px;
-    border-color: var(--glass-border);
-}
-
-.vault-checkbox:checked ~ .card-visual-header .folder-icon .folder-front { display: block; }
-.vault-checkbox:checked ~ .card-visual-header .folder-icon .folder-back { display: none; }
-.vault-checkbox:checked ~ .card-visual-header .folder-icon { transform: scale(1.08); }
-
-.vault-checkbox:checked ~ .card-body .vault-file-tree {
     max-height: 720px;
     overflow-y: auto;
     opacity: 1;
     margin-top: 20px;
     padding: 15px;
     border-color: var(--glass-border);
+}
+
+.vault-details[open] .folder-hint-text {
+    color: var(--neon-blue);
 }
 
 .tree-header {
@@ -522,7 +514,7 @@ body {
     margin-top: 2px;
 }
 
-.folder-trigger:focus-within .folder-icon {
+.vault-details > summary:focus-visible .folder-icon {
     outline: 2px solid var(--neon-blue);
     outline-offset: 6px;
 }
@@ -645,6 +637,11 @@ body {
 }
 
 @media (max-width: 560px) {
+    .container { width: min(92%, 520px); }
+    .work-section, .pricing-section, .contact-section { padding: 72px 0; }
+    .section-title { font-size: 1.7rem; line-height: 1.2; }
     .pricing-grid { grid-template-columns: 1fr; }
     .stack-list div { gap: 10px; grid-template-columns: 1fr; }
+    .price-card { min-height: 0; padding: 22px; }
+    .pricing-section .section-desc { margin-bottom: 28px; }
 }
